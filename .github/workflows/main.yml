@@ -4,23 +4,30 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone project
+    # Step 1: Checkout code
+    - name: Checkout repository
       uses: actions/checkout@v3
 
+    # Step 2: Set up Node.js
     - name: Set up Node.js
-      uses: actions/setup-node@v4.1.0
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
 
+    # Step 3: Install dependencies
     - name: Install dependencies
       run: npm install
 
-    - name: Build project
+    # Step 5: Build the project
+    - name: Build
       run: npm run build
 
-    - name: Deploy
-      run: echo "Project deployed successfully"
