@@ -16,7 +16,7 @@ jobs:
 
     # Step 2: Set up Node.js
     - name: Installing Node.js
-      uses: actions/setup-node@v21.6.2
+      uses: actions/setup-node@v4.1.0
 
     # Step 3: Install dependencies
     - name: Install dependencies
