@@ -10,19 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout code
+
     - name: Clone Project
       uses: actions/checkout@v3
 
-    # Step 2: Set up Node.js
     - name: Installing Node.js
       uses: actions/setup-node@v4.1.0
 
-    # Step 3: Install dependencies
     - name: Install dependencies
       run: npm install
 
-    # Step 5: Build the project
     - name: Build
       run: npm run build
 
